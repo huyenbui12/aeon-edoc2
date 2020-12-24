@@ -1,0 +1,30 @@
+{
+  "name": "aeon-auto",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "login": " npx wdio wdio.conf.js --suite login",
+    "addBTA": "npx wdio wdio.conf.js --suite addNewBTA",
+    "shift": "npx wdio wdio.conf.js --suite shiftExchange",
+    "leave": "npx wdio wdio.conf.js --suite leave",
+    "proCreate": "npx wdio wdio.conf.js --suite proCreate",
+    "proResult": "npx wdio wdio.conf.js --suite proResult"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@wdio/cli": "^6.10.0",
+    "@wdio/local-runner": "^6.10.0",
+    "@wdio/mocha-framework": "^6.8.0",
+    "@wdio/spec-reporter": "^6.8.1",
+    "@wdio/sync": "^6.10.0",
+    "chromedriver": "^87.0.0",
+    "wdio-chromedriver-service": "^6.0.4"
+  },
+  "dependencies": {
+    "extends-classes": "^1.0.5"
+  }
+}

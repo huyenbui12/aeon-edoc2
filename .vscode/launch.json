@@ -1,0 +1,35 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "pwa-chrome",
+            "request": "launch",
+            "name": "Launch Chrome against localhost",
+            "url": "http://localhost:8080",
+            "webRoot": "${workspaceFolder}"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Run in debug",
+            "port": 5859,
+            "timeout": 60000,
+            "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/wdio",
+            "cwd": "${workspaceRoot}",
+            "console": "integratedTerminal",
+            "args": [
+                "--spec", "BTA-add-new.js"
+            // "--spec main.js" will be passed to your executable as
+            // "wdio '--spec main.js'" (which isn't what you want)
+            ],
+            "env": {
+                "DEBUG": "1" 
+                // use an environment variable to be able
+                // to toggle debug mode on and off
+            }
+        }
+    ]
+}
