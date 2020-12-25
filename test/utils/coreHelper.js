@@ -62,13 +62,13 @@ exports.readLoginCredentials = function readLoginCredentials() {
 
 exports.writeFile = function writeFile(jsonData){
     var fs = require('fs');
-    fs.writeFile("./utils/test.json", jsonData, function(err) {
+    fs.writeFile("./test/utils/test.json", jsonData, function(err) {
     if (err) {
         console.log(err);
     }
 })};
 
-exports.readFileJson = function readFileJson(inputPath) {
+exports.readFile = function readFile(inputPath) {
     const rf = require(inputPath);
     return rf;
 }

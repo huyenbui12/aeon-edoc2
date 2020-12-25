@@ -5,7 +5,7 @@ const dashboardPage = require('../pageobjects/dashboard-page');
 const probationPage = require('../pageobjects/probation-page');
 
 describe('Probation - Result - Submitter',() => {
-    const credentials = coreHelper.readFileJson('../utils/probationData.json');
+    const credentials = coreHelper.readFile('../utils/probationData.json');
 
     it('should navigate to Probation page successfully',() => {
         loginPage._open();
@@ -26,7 +26,7 @@ describe('Probation - Result - Submitter',() => {
     });
 
     it('should open the recent created ticket successfully',() => {
-        const refNumberNeedRead = coreHelper.readFileJson('../utils/test.json');
+        const refNumberNeedRead = coreHelper.readFile('../utils/test.json');
         const refNumbers = probationPage.REF_NUMBERS;
         for (let i = 0; i < refNumbers.length; i++) {
             sref = refNumbers[i].getAttribute("ui-sref");
@@ -77,7 +77,7 @@ describe('Probation - Result - Submitter',() => {
 });
 
 describe.skip('Probation - Result - First_Approval', () => {
-    const credentials = coreHelper.readFileJson('../utils/probationData.json');
+    const credentials = coreHelper.readFile('../utils/probationData.json');
 
     it('should navigate to Probation page successfully',() => {
         loginPage._open();
@@ -98,7 +98,7 @@ describe.skip('Probation - Result - First_Approval', () => {
     });
 
     it('should open the recent created ticket successfully',() => {
-        const refNumberNeedRead = coreHelper.readFileJson('../utils/test.json');
+        const refNumberNeedRead = coreHelper.readFile('../utils/test.json');
         const refNumbers = probationPage.REF_NUMBERS;
         for (let i = 0; i < refNumbers.length; i++) {
             sref = refNumbers[i].getAttribute("ui-sref");
@@ -133,7 +133,7 @@ describe.skip('Probation - Result - First_Approval', () => {
 });   
 
 describe.skip('Probation - Result - HR/C&B_Approval', () => {
-    const credentials = coreHelper.readFileJson('../utils/probationData.json');
+    const credentials = coreHelper.readFile('../utils/probationData.json');
 
     it('should navigate to Probation page successfully',() => {
         loginPage._open();
@@ -154,7 +154,7 @@ describe.skip('Probation - Result - HR/C&B_Approval', () => {
     });
 
     it('should open the recent created ticket successfully',() => {
-        const refNumberNeedRead = coreHelper.readFileJson('../utils/test.json');
+        const refNumberNeedRead = coreHelper.readFile('../utils/test.json');
         const refNumbers = probationPage.REF_NUMBERS;
         for (let i = 0; i < refNumbers.length; i++) {
             sref = refNumbers[i].getAttribute("ui-sref");
@@ -188,7 +188,7 @@ describe.skip('Probation - Result - HR/C&B_Approval', () => {
 }); 
 
 describe.skip('Probation - Result - Appraisee', () => {
-    const credentials = coreHelper.readFileJson('../utils/probationData.json');
+    const credentials = coreHelper.readFile('../utils/probationData.json');
 
     it('should navigate to Probation page successfully',() => {
         loginPage._open();
@@ -209,7 +209,7 @@ describe.skip('Probation - Result - Appraisee', () => {
     });
 
     it('should open the recent created ticket successfully',() => {
-        const refNumberNeedRead = coreHelper.readFileJson('../utils/test.json');
+        const refNumberNeedRead = coreHelper.readFile('../utils/test.json');
         const refNumbers = probationPage.REF_NUMBERS;
         for (let i = 0; i < refNumbers.length; i++) {
             sref = refNumbers[i].getAttribute("ui-sref");
