@@ -15,6 +15,8 @@ class DashBoard extends Page {
 
   get HANDOVER_BUTTON() { return $('//div/*[contains(text(),"Add A Handover Resignation")]') }
 
+  get RESIGNATION_BUTTON() { return $('//span[contains(.,"Add A Resignation Application")]') }
+
   // Todo-list
   get TODO_LIST() { return $('//div[@class="portlet bordered light"]') }
 

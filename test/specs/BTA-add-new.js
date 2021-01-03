@@ -14,7 +14,7 @@ const dashboardPage = require('../pageobjects/dashboard-page');
 // const inputFile = process.argv[3];
 
 describe('BTA page - Requester', () => {
-  const credentials = coreHelper.readFile('../utils/BTAdata.json');
+  const credentials = coreHelper.readFile('../utils/bta-data.json');
   const departure = 'Cà Mau';
   const arrival = 'Hà Nội';
   const genderMale = 'Nam';
@@ -117,7 +117,7 @@ describe('BTA page - Requester', () => {
 });
 
 describe.skip('BTA page - First_Approval', () => {
-  const credentials = coreHelper.readFile('../utils/BTAdata.json');
+  const credentials = coreHelper.readFile('../utils/bta-data.json');
 
   it('should navigate to Add BTA page successfully', () => {
     LoginPage.open();
@@ -164,7 +164,7 @@ describe.skip('BTA page - First_Approval', () => {
 });
 
 describe.skip('BTA page - Second_Approval', () => {
-  const credentials = coreHelper.readFile('../utils/BTAdata.json');
+  const credentials = coreHelper.readFile('../utils/bta-data.json');
 
   it('should navigate to Add BTA page successfully', () => {
     LoginPage.open();
@@ -211,7 +211,7 @@ describe.skip('BTA page - Second_Approval', () => {
 });
 
 describe.skip('BTA page - Admin_Checker', () => {
-  const credentials = coreHelper.readFile('../utils/BTAdata.json');
+  const credentials = coreHelper.readFile('../utils/bta-data.json');
 
   it('should navigate to Add BTA page successfully', () => {
     LoginPage.open();
@@ -274,7 +274,7 @@ describe.skip('BTA page - Admin_Checker', () => {
 });
 
 describe.skip('BTA page - Admin_Manager', () => {
-  const credentials = coreHelper.readFile('../utils/BTAdata.json');
+  const credentials = coreHelper.readFile('../utils/bta-data.json');
 
   it('should navigate to Add BTA page successfully', () => {
     LoginPage.open();
