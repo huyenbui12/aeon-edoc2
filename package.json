@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "login": " npx wdio wdio.conf.js --suite login",
-    "addBTA": "npx wdio wdio.conf.js --suite addNewBTA",
+    "addBTA": "npx wdio wdio.conf.js --suite addBTA",
     "shift": "npx wdio wdio.conf.js --suite shiftExchange",
     "leave": "npx wdio wdio.conf.js --suite leave",
     "proCreate": "npx wdio wdio.conf.js --suite proCreate",
@@ -22,6 +22,9 @@
     "@wdio/spec-reporter": "^6.8.1",
     "@wdio/sync": "^6.10.0",
     "chromedriver": "^87.0.0",
+    "eslint": "^7.16.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
     "wdio-chromedriver-service": "^6.0.4"
   },
   "dependencies": {
