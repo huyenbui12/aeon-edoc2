@@ -1,5 +1,4 @@
 *.log
 node_modules/
-test/utils/login.json
-test/utils/probationData.json
 test/utils/*.json
+package-lock.json
