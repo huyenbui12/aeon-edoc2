@@ -9,7 +9,7 @@ const dashboardPage = require('../pageobjects/dashboard-page');
 const probationPage = require('../pageobjects/probation-page');
 
 describe.skip('Probation - Result - Submitter', () => {
-  const credentials = coreHelper.readFile('../utils/probationData.json');
+  const credentials = coreHelper.readFile('../utils/probation-data.json');
 
   it('should navigate to Probation page successfully', () => {
     loginPage.open();
@@ -80,7 +80,7 @@ describe.skip('Probation - Result - Submitter', () => {
 });
 
 describe('Probation - Result - First_Approval', () => {
-  const credentials = coreHelper.readFile('../utils/probationData.json');
+  const credentials = coreHelper.readFile('../utils/probation-data.json');
 
   it('should navigate to Probation page successfully', () => {
     loginPage.open();
@@ -137,7 +137,7 @@ describe('Probation - Result - First_Approval', () => {
 });
 
 describe.skip('Probation - Result - HR/C&B_Approval', () => {
-  const credentials = coreHelper.readFile('../utils/probationData.json');
+  const credentials = coreHelper.readFile('../utils/probation-data.json');
 
   it('should navigate to Probation page successfully', () => {
     loginPage.open();
@@ -192,7 +192,7 @@ describe.skip('Probation - Result - HR/C&B_Approval', () => {
 });
 
 describe.skip('Probation - Result - Appraisee', () => {
-  const credentials = coreHelper.readFile('../utils/probationData.json');
+  const credentials = coreHelper.readFile('../utils/probation-data.json');
 
   it('should navigate to Probation page successfully', () => {
     loginPage.open();
