@@ -8,12 +8,12 @@ const coreHelper = require('../utils/coreHelper');
 const probationPage = require('../pageobjects/probation-page');
 const dashboardPage = require('../pageobjects/dashboard-page');
 
-describe.skip('Probation - CreateForm - Submitter', () => {
+describe('Probation - CreateForm - Submitter', () => {
   const credentials = coreHelper.readFile('../utils/probation-data.json');
 
   it('should navigate to Probation page successfully', () => {
     loginPage.open();
-    loginPage.loginByForms(credentials.HQ_G1G3.Submitter.username, credentials.HQ_G1G3.Submitter.password);
+    loginPage.loginByForms(credentials.Store_G3up.Submitter.username, credentials.Store_G3up.Submitter.password);
     coreHelper.clickAndWait(dashBoardPage.PROBATION_EVALUATION_BUTTON, probationPage.TITLE);
     expect(probationPage.TITLE).toBeExisting();
   });
@@ -26,7 +26,7 @@ describe.skip('Probation - CreateForm - Submitter', () => {
     // Click on SAP Code to display dropdown
     coreHelper.clickAndWait(probationPage.SAP_TEXTBOX, probationPage.SAP_DROPDOWN);
     // Input SAP Code into search bar in the dropdown
-    coreHelper.inputText(probationPage.SAP_DROPDOWN, credentials.HQ_G1G3.Appraisee.username);
+    coreHelper.inputText(probationPage.SAP_DROPDOWN, credentials.Store_G3up.Appraisee.username);
     browser.pause(1000);
 
     const numberOfRows = probationPage.GRID_ROW;
@@ -63,56 +63,6 @@ describe.skip('Probation - CreateForm - Submitter', () => {
   });
 
   it('should sign out successfully', () => {
-    browser.pause(2000);
-    coreHelper.clickAndWait(dashboardPage.AVATAR_DROPDOWN, dashboardPage.SIGN_OUT_BUTTON);
-    browser.pause(3000);
-    coreHelper.clickAndWait(dashboardPage.SIGN_OUT_BUTTON, loginPage.CREDENTIAL_TEXTBOX);
-  });
-});
-
-describe.skip('Probation - CreateForm - First_Approval', () => {
-  const credentials = coreHelper.readFile('../utils/probation-data.json');
-
-  it('should navigate to Probation page successfully', () => {
-    loginPage.open();
-    loginPage.loginByForms(credentials.HQ_G1G3.First_Approval.username, credentials.HQ_G1G3.First_Approval.password);
-    // coreHelper.scrollToFooter();
-    coreHelper.clickAndWait(dashBoardPage.PROBATION_EVALUATION_BUTTON, probationPage.TITLE);
-    expect(probationPage.TITLE).toBeExisting();
-  });
-
-  it('should navigate to All Requests page', () => {
-    coreHelper.scrollToHeader();
-    coreHelper.waitAndClickConstTime(dashboardPage.MORE_MENU);
-    browser.pause(2000);
-    coreHelper.hoverMouse(dashboardPage.PROBATION_MENU);
-    coreHelper.waitAndClickConstTime(dashboardPage.PROBATION_ALL_REQUESTS_MENU);
-    browser.pause(2000);
-    expect(dashboardPage.PROBATION_ALL_REQUESTS_TITLE).toBeExisting();
-  });
-
-  it('should open the recent created ticket successfully', () => {
-    const refNumberNeedRead = coreHelper.readFile('../utils/test.json');
-    const refNumbers = probationPage.REF_NUMBERS;
-    for (let i = 0; i < refNumbers.length; i++) {
-      sref = refNumbers[i].getAttribute('ui-sref');
-      if (sref.includes(refNumberNeedRead.RefNumber)) {
-        refNumbers[i].click();
-        browser.pause(5000);
-        break;
-      }
-    }
-    expect(probationPage.TITLE).toBeExisting();
-  });
-
-  it('should APPROVE the ticket successfully', () => {
-    coreHelper.clickAndWait(probationPage.APPROVE_BUTTON, probationPage.OK_BUTTON);
-    probationPage.OK_BUTTON.click();
-    browser.pause(2000);
-    expect(probationPage.APPROVE_BUTTON).not.toBeExisting();
-  });
-
-  it.skip('should sign out successfully', () => {
     browser.pause(5000);
     coreHelper.clickAndWait(dashboardPage.AVATAR_DROPDOWN, dashboardPage.SIGN_OUT_BUTTON);
     browser.pause(3000);
@@ -120,12 +70,12 @@ describe.skip('Probation - CreateForm - First_Approval', () => {
   });
 });
 
-describe('Probation - CreateForm - HR/C&B_Approval', () => {
+describe('Probation - CreateForm - First_Approval', () => {
   const credentials = coreHelper.readFile('../utils/probation-data.json');
 
   it('should navigate to Probation page successfully', () => {
     loginPage.open();
-    loginPage.loginByForms(credentials.HQ_G1G3.HR_Approval.username, credentials.HQ_G1G3.HR_Approval.password);
+    loginPage.loginByForms(credentials.Store_G3up.First_Approval.username, credentials.Store_G3up.First_Approval.password);
     // coreHelper.scrollToFooter();
     coreHelper.clickAndWait(dashBoardPage.PROBATION_EVALUATION_BUTTON, probationPage.TITLE);
     expect(probationPage.TITLE).toBeExisting();
@@ -163,19 +113,19 @@ describe('Probation - CreateForm - HR/C&B_Approval', () => {
   });
 
   it('should sign out successfully', () => {
-    browser.pause(5000);
+    browser.pause(7000);
     coreHelper.clickAndWait(dashboardPage.AVATAR_DROPDOWN, dashboardPage.SIGN_OUT_BUTTON);
     browser.pause(3000);
     coreHelper.clickAndWait(dashboardPage.SIGN_OUT_BUTTON, loginPage.CREDENTIAL_TEXTBOX);
   });
 });
 
-describe.skip('Probation - CreateForm - Appraisee', () => {
+describe('Probation - CreateForm - HR/C&B_Approval', () => {
   const credentials = coreHelper.readFile('../utils/probation-data.json');
 
   it('should navigate to Probation page successfully', () => {
     loginPage.open();
-    loginPage.loginByForms(credentials.HQ_G1G3.Appraisee.username, credentials.HQ_G1G3.Appraisee.password);
+    loginPage.loginByForms(credentials.Store_G3up.HR_Approval.username, credentials.Store_G3up.HR_Approval.password);
     // coreHelper.scrollToFooter();
     coreHelper.clickAndWait(dashBoardPage.PROBATION_EVALUATION_BUTTON, probationPage.TITLE);
     expect(probationPage.TITLE).toBeExisting();
@@ -188,7 +138,57 @@ describe.skip('Probation - CreateForm - Appraisee', () => {
     coreHelper.hoverMouse(dashboardPage.PROBATION_MENU);
     coreHelper.waitAndClickConstTime(dashboardPage.PROBATION_ALL_REQUESTS_MENU);
     browser.pause(2000);
-    expect(dashboardPage.PROBATION_ALL_REQUESTS_PAGE).toBeExisting();
+    expect(dashboardPage.PROBATION_ALL_REQUESTS_TITLE).toBeExisting();
+  });
+
+  it('should open the recent created ticket successfully', () => {
+    const refNumberNeedRead = coreHelper.readFile('../utils/test.json');
+    const refNumbers = probationPage.REF_NUMBERS;
+    for (let i = 0; i < refNumbers.length; i++) {
+      sref = refNumbers[i].getAttribute('ui-sref');
+      if (sref.includes(refNumberNeedRead.RefNumber)) {
+        refNumbers[i].click();
+        browser.pause(5000);
+        break;
+      }
+    }
+    expect(probationPage.TITLE).toBeExisting();
+  });
+
+  it('should APPROVE the ticket successfully', () => {
+    coreHelper.clickAndWait(probationPage.APPROVE_BUTTON, probationPage.OK_BUTTON);
+    probationPage.OK_BUTTON.click();
+    browser.pause(2000);
+    expect(probationPage.APPROVE_BUTTON).not.toBeExisting();
+  });
+
+  it('should sign out successfully', () => {
+    browser.pause(7000);
+    coreHelper.clickAndWait(dashboardPage.AVATAR_DROPDOWN, dashboardPage.SIGN_OUT_BUTTON);
+    browser.pause(3000);
+    coreHelper.clickAndWait(dashboardPage.SIGN_OUT_BUTTON, loginPage.CREDENTIAL_TEXTBOX);
+  });
+});
+
+describe('Probation - CreateForm - Appraisee', () => {
+  const credentials = coreHelper.readFile('../utils/probation-data.json');
+
+  it('should navigate to Probation page successfully', () => {
+    loginPage.open();
+    loginPage.loginByForms(credentials.Store_G3up.Appraisee.username, credentials.Store_G3up.Appraisee.password);
+    // coreHelper.scrollToFooter();
+    coreHelper.clickAndWait(dashBoardPage.PROBATION_EVALUATION_BUTTON, probationPage.TITLE);
+    expect(probationPage.TITLE).toBeExisting();
+  });
+
+  it('should navigate to All Requests page', () => {
+    coreHelper.scrollToHeader();
+    coreHelper.waitAndClickConstTime(dashboardPage.MORE_MENU);
+    browser.pause(2000);
+    coreHelper.hoverMouse(dashboardPage.PROBATION_MENU);
+    coreHelper.waitAndClickConstTime(dashboardPage.PROBATION_ALL_REQUESTS_MENU);
+    browser.pause(2000);
+    expect(dashboardPage.PROBATION_ALL_REQUESTS_TITLE).toBeExisting();
   });
 
   it('should open the recent created ticket successfully', () => {
@@ -210,12 +210,5 @@ describe.skip('Probation - CreateForm - Appraisee', () => {
     probationPage.OK_BUTTON.click();
     browser.pause(2000);
     expect(probationPage.CONFIRM_BUTTON).not.toBeExisting();
-  });
-
-  it('should sign out successfully', () => {
-    browser.pause(2000);
-    coreHelper.clickAndWait(dashboardPage.AVATAR_DROPDOWN, dashboardPage.SIGN_OUT_BUTTON);
-    browser.pause(3000);
-    coreHelper.clickAndWait(dashboardPage.SIGN_OUT_BUTTON, loginPage.CREDENTIAL_TEXTBOX);
   });
 });

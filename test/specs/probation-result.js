@@ -25,7 +25,7 @@ describe.skip('Probation - Result - Submitter', () => {
     coreHelper.hoverMouse(dashboardPage.PROBATION_MENU);
     coreHelper.waitAndClickConstTime(dashboardPage.PROBATION_ALL_REQUESTS_MENU);
     browser.pause(2000);
-    expect(dashboardPage.PROBATION_ALL_REQUESTS_PAGE).toBeExisting();
+    expect(dashboardPage.PROBATION_ALL_REQUESTS_TITLE).toBeExisting();
   });
 
   it('should open the recent created ticket successfully', () => {
@@ -72,14 +72,14 @@ describe.skip('Probation - Result - Submitter', () => {
   });
 
   it('should sign out successfully', () => {
-    browser.pause(2000);
+    browser.pause(7000);
     coreHelper.clickAndWait(dashboardPage.AVATAR_DROPDOWN, dashboardPage.SIGN_OUT_BUTTON);
     browser.pause(3000);
     coreHelper.clickAndWait(dashboardPage.SIGN_OUT_BUTTON, loginPage.CREDENTIAL_TEXTBOX);
   });
 });
 
-describe('Probation - Result - First_Approval', () => {
+describe.skip('Probation - Result - First_Approval', () => {
   const credentials = coreHelper.readFile('../utils/probation-data.json');
 
   it('should navigate to Probation page successfully', () => {
@@ -129,19 +129,19 @@ describe('Probation - Result - First_Approval', () => {
   });
 
   it.skip('should sign out successfully', () => {
-    browser.pause(2000);
+    browser.pause(7000);
     coreHelper.clickAndWait(dashboardPage.AVATAR_DROPDOWN, dashboardPage.SIGN_OUT_BUTTON);
     browser.pause(3000);
     coreHelper.clickAndWait(dashboardPage.SIGN_OUT_BUTTON, loginPage.CREDENTIAL_TEXTBOX);
   });
 });
 
-describe.skip('Probation - Result - HR/C&B_Approval', () => {
+describe('Probation - Result - HR/C&B_Approval', () => {
   const credentials = coreHelper.readFile('../utils/probation-data.json');
 
   it('should navigate to Probation page successfully', () => {
     loginPage.open();
-    loginPage.loginByForms(credentials.HQ_G4up.CnB_Approval.username, credentials.HQ_G4up.CnB_Approval.password);
+    loginPage.loginByForms(credentials.HQ_G1G3.HR_Approval.username, credentials.HQ_G1G3.HR_Approval.password);
     // coreHelper.scrollToFooter();
     coreHelper.clickAndWait(dashBoardPage.PROBATION_EVALUATION_BUTTON, probationPage.TITLE);
     expect(probationPage.TITLE).toBeExisting();
@@ -184,19 +184,19 @@ describe.skip('Probation - Result - HR/C&B_Approval', () => {
   });
 
   it('should sign out successfully', () => {
-    browser.pause(2000);
+    browser.pause(7000);
     coreHelper.clickAndWait(dashboardPage.AVATAR_DROPDOWN, dashboardPage.SIGN_OUT_BUTTON);
     browser.pause(3000);
     coreHelper.clickAndWait(dashboardPage.SIGN_OUT_BUTTON, loginPage.CREDENTIAL_TEXTBOX);
   });
 });
 
-describe.skip('Probation - Result - Appraisee', () => {
+describe('Probation - Result - Appraisee', () => {
   const credentials = coreHelper.readFile('../utils/probation-data.json');
 
   it('should navigate to Probation page successfully', () => {
     loginPage.open();
-    loginPage.loginByForms(credentials.HQ_G4up.Appraisee.username, credentials.HQ_G4up.Appraisee.password);
+    loginPage.loginByForms(credentials.HQ_G1G3.Appraisee.username, credentials.HQ_G1G3.Appraisee.password);
     // coreHelper.scrollToFooter();
     coreHelper.clickAndWait(dashBoardPage.PROBATION_EVALUATION_BUTTON, probationPage.TITLE);
     expect(probationPage.TITLE).toBeExisting();
@@ -209,7 +209,7 @@ describe.skip('Probation - Result - Appraisee', () => {
     coreHelper.hoverMouse(dashboardPage.PROBATION_MENU);
     coreHelper.waitAndClickConstTime(dashboardPage.PROBATION_ALL_REQUESTS_MENU);
     browser.pause(2000);
-    expect(dashboardPage.PROBATION_ALL_REQUESTS_PAGE).toBeExisting();
+    expect(dashboardPage.PROBATION_ALL_REQUESTS_TITLE).toBeExisting();
   });
 
   it('should open the recent created ticket successfully', () => {

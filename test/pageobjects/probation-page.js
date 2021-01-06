@@ -53,9 +53,9 @@ class CreateFormProbation extends Page {
 
   get FIRST_APPROVAL_SIGN_RADIO() { return $('//label[@for="signOfficial"]') }
 
-  get APPRAISEE_AGREE_RADIO() { return $('#agreeProposal') }
+  get APPRAISEE_AGREE_RADIO() { return $('//label[@for="agreeProposal"]') }
 
-  get HR_PERIOD_RADIO() { return $('#probationPeriod') }
+  get HR_PERIOD_RADIO() { return $('//label[@for="toBeConfimed"]') }
 
   get HR_PROBATION_PERIOD_TEXTBOX() { return $('probationPeriodText') }
 
