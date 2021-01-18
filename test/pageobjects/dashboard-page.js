@@ -37,6 +37,12 @@ class DashBoard extends Page {
 
   get PROBATION_ALL_REQUESTS_TITLE() { return $('//span[contains(.,"All Probation Evaluation Requests")]') }
 
+  get HANDOVER_MENU() { return $('//a[@class="ng-binding"][contains(.,"Handover for Resignation")]') }
+
+  get HANDOVER_ALL_REQUESTS_MENU() { return $('//a[@ui-sref="home.handover-resignation.allRequests"]') }
+
+  get HANDOVER_ALL_REQUESTS_TITLE() { return $('//span[contains(.,"All Requests")]') }
+
   // Probation - All Requests
   get REF_NUMBER_FIRST() { return $('//*[@id="grid"]/div[2]/table/tbody/tr[2]/td[2]/a') }
 

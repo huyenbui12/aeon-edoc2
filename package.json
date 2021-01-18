@@ -10,7 +10,8 @@
     "shift": "npx wdio wdio.conf.js --suite shiftExchange",
     "leave": "npx wdio wdio.conf.js --suite leave",
     "proCreate": "npx wdio wdio.conf.js --suite proCreate",
-    "proResult": "npx wdio wdio.conf.js --suite proResult"
+    "proResult": "npx wdio wdio.conf.js --suite proResult",
+    "handover": "npx wdio wdio.conf.js --suite handover"
   },
   "keywords": [],
   "author": "",
