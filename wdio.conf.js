@@ -27,6 +27,7 @@ exports.config = {
     leave: ['./test/specs/leave-management.js'],
     proCreate: ['./test/specs/probation-create.js'],
     proResult: ['./test/specs/probation-result.js'],
+    handover: ['./test/specs/handover.js'],
   },
   // Patterns to exclude.
   exclude: [
