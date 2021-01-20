@@ -8,9 +8,13 @@ class Handover extends Page {
   // get title and buttons
   get TITLE() { return $('//div/span[@class="caption-subject uppercase ng-binding"]')}
 
-  get SEND_REQUEST_BUTTON() { return $('//span[contains(.,"Send Request")]')}
+  get SEND_REQUEST_BUTTON() { return $('.btsendrequest')}
 
   get CONFIRM_BUTTON() { return $('//button[@ng-click="dSave(3)"]')}
+
+  get APPROVE_BUTTON() { return $('//button[@ng-if="status.allowToVote && status.approveFieldText"]')}
+
+  get OK_BUTTON() { return $('//div/button[contains(text(),"OK")]')}
 
   // get Office Quipment - Facility
   FACILITY_ITEM_CHECKBOX(i) { return $(`div[kendo-grid="facilityGrid"] tr:nth-child(${i}) input[ng-model="dataItem.isVerified"]`)}

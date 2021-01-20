@@ -13,7 +13,8 @@ class DashBoard extends Page {
 
   get PROBATION_EVALUATION_BUTTON() { return $('//div/*[contains(text(),"Add A Probation Evaluation")]') }
 
-  get HANDOVER_BUTTON() { return $('//div/*[contains(text(),"Add A Handover Resignation")]') }
+  get HANDOVER_BUTTON() { return $('//a[@href="#!/home/handover-resignation/item/?id="]/div') }
+  // { return $('//div/*[contains(text(),"Add A Handover Resignation")]') }
 
   get RESIGNATION_BUTTON() { return $('//span[contains(.,"Add A Resignation Application")]') }
 
@@ -37,7 +38,10 @@ class DashBoard extends Page {
 
   get PROBATION_ALL_REQUESTS_TITLE() { return $('//span[contains(.,"All Probation Evaluation Requests")]') }
 
-  get HANDOVER_MENU() { return $('//a[@class="ng-binding"][contains(.,"Handover for Resignation")]') }
+  get HANDOVER_MENU() {
+    return $('//a[@class="ng-binding"][contains(.,"Handover for Resignation")]')
+    // return $('')
+  }
 
   get HANDOVER_ALL_REQUESTS_MENU() { return $('//a[@ui-sref="home.handover-resignation.allRequests"]') }
 

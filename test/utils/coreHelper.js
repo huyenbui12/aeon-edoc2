@@ -63,6 +63,10 @@ exports.backToTop = function backToTop(selector) {
   }
 };
 
+exports.randomIndexInArray = function randomIndexInArray(array) {
+  return Math.floor(Math.random() * array.length);
+};
+
 exports.readLoginCredentials = function readLoginCredentials() {
   const credentials = require('./login.json');
   return credentials;
