@@ -98,3 +98,11 @@ exports.getText = function getText(elementId) {
 exports.hoverMouse = function hoverMouse(element) {
   element.moveTo();
 };
+
+exports.clickCheckBox = function clickCheckBox(selector) {
+  // eslint-disable-next-line no-shadow
+  browser.execute((selector) => {
+    const test = document.querySelector(selector);
+    test.click();
+  }, selector);
+};

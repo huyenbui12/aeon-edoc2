@@ -21,7 +21,7 @@
             "cwd": "${workspaceRoot}",
             "console": "integratedTerminal",
             "args": [
-                "--spec", "BTA-add-new.js"
+                "--spec", "handover.js"
             // "--spec main.js" will be passed to your executable as
             // "wdio '--spec main.js'" (which isn't what you want)
             ],
