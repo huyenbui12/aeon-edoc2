@@ -22,9 +22,7 @@ exports.config = {
   ],
   suites: {
     login: ['./test/specs/login.js'],
-    addBTA: ['./test/specs/BTA-add-new.js'],
-    shiftExchange: ['./test/specs/shift-exchange.js'],
-    leave: ['./test/specs/leave-management.js'],
+    bta: ['./test/specs/bta.js'],
     proCreate: ['./test/specs/probation-create.js'],
     proResult: ['./test/specs/probation-result.js'],
     handover: ['./test/specs/handover.js'],

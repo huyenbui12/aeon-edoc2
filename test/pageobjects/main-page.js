@@ -6,7 +6,7 @@
 module.exports = class Page {
   openUrl() {
     browser.maximizeWindow();
-    const endpoint = require('./../utils/endpoint.json');
+    const endpoint = require('../data/endpointData.json');
     browser.url(endpoint.BaseURL);
   }
 }

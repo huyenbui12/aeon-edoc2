@@ -6,9 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "login": " npx wdio wdio.conf.js --suite login",
-    "addBTA": "npx wdio wdio.conf.js --suite addBTA",
-    "shift": "npx wdio wdio.conf.js --suite shiftExchange",
-    "leave": "npx wdio wdio.conf.js --suite leave",
+    "bta": "npx wdio wdio.conf.js --suite bta",
     "proCreate": "npx wdio wdio.conf.js --suite proCreate",
     "proResult": "npx wdio wdio.conf.js --suite proResult",
     "handover": "npx wdio wdio.conf.js --suite handover"

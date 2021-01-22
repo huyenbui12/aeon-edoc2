@@ -1,13 +1,3 @@
-/* eslint-disable no-loop-func */
-/* eslint-disable camelcase */
-/* eslint-disable no-shadow */
-/* eslint-disable no-var */
-/* eslint-disable vars-on-top */
-/* eslint-disable prefer-const */
-/* eslint-disable no-plusplus */
-/* eslint-disable max-len */
-/* eslint-disable no-undef */
-/* eslint-disable no-underscore-dangle */
 /* eslint-disable */
 const loginPage = require('../pageobjects/login-page');
 const dashBoardPage = require('../pageobjects/dashboard-page');
@@ -15,13 +5,12 @@ const coreHelper = require('../utils/coreHelper');
 const dashboardPage = require('../pageobjects/dashboard-page');
 const handoverPage = require('../pageobjects/handover-page');
 
-const handoverCredentials = coreHelper.readFile('../utils/handover-data.json');
+const handoverCredentials = coreHelper.readFile('../data/handoverData.json');
 
 handoverCredentials.Submitter.forEach((submitter) => {
   // Employee submits Handover ticket
-  describe.skip('Handover - Employee', () => {
-    // const credentials = coreHelper.readFile('../utils/handover-data.json');
-
+  describe('Handover - Employee', () => {
+    
     it('should navigate to Probation page successfully', () => {
       loginPage.open();
       loginPage.loginByForms(submitter.login, submitter.password);
@@ -54,12 +43,11 @@ handoverCredentials.Submitter.forEach((submitter) => {
   });
   // 6 Departments review
   describe('Handover - Facility', () => {
-    const credentials = coreHelper.readFile('../utils/handover-data.json');
+    const credentials = coreHelper.readFile('../data/handoverData.json');
     const index = coreHelper.randomIndexInArray(credentials.Facility);
     it('should navigate to Probation page successfully', () => {
       loginPage.open();
       loginPage.loginByForms(credentials.Facility[index].login, credentials.Facility[index].password);
-      // coreHelper.scrollToFooter();
       coreHelper.clickAndWait(dashBoardPage.HANDOVER_BUTTON, handoverPage.TITLE);
       expect(handoverPage.TITLE).toBeExisting();
     });
@@ -75,7 +63,7 @@ handoverCredentials.Submitter.forEach((submitter) => {
     });
 
     it('should open the recent created ticket successfully', () => {
-      const refNumberNeedRead = coreHelper.readFile('../utils/test.json');
+      const refNumberNeedRead = coreHelper.readFile('../data/test.json');
       const refNumbers = handoverPage.REF_NUMBERS;
       for (let i = 0; i < refNumbers.length; i++) {
         sref = refNumbers[i].getAttribute('ui-sref');
@@ -109,7 +97,7 @@ handoverCredentials.Submitter.forEach((submitter) => {
     });
   });
   describe('Handover - Admin', () => {
-    const credentials = coreHelper.readFile('../utils/handover-data.json');
+    const credentials = coreHelper.readFile('../data/handoverData.json');
     const index = coreHelper.randomIndexInArray(credentials.Admin);
     it('should navigate to Probation page successfully', () => {
       loginPage.open();
@@ -130,7 +118,7 @@ handoverCredentials.Submitter.forEach((submitter) => {
     });
 
     it('should open the recent created ticket successfully', () => {
-      const refNumberNeedRead = coreHelper.readFile('../utils/test.json');
+      const refNumberNeedRead = coreHelper.readFile('../data/test.json');
       const refNumbers = handoverPage.REF_NUMBERS;
       for (let i = 0; i < refNumbers.length; i++) {
         sref = refNumbers[i].getAttribute('ui-sref');
@@ -164,7 +152,7 @@ handoverCredentials.Submitter.forEach((submitter) => {
     });
   });
   describe('Handover - IT', () => {
-    const credentials = coreHelper.readFile('../utils/handover-data.json');
+    const credentials = coreHelper.readFile('../data/handoverData.json');
     const index = coreHelper.randomIndexInArray(credentials.IT);
 
     it('should navigate to Probation page successfully', () => {
@@ -186,7 +174,7 @@ handoverCredentials.Submitter.forEach((submitter) => {
     });
 
     it('should open the recent created ticket successfully', () => {
-      const refNumberNeedRead = coreHelper.readFile('../utils/test.json');
+      const refNumberNeedRead = coreHelper.readFile('../data/test.json');
       const refNumbers = handoverPage.REF_NUMBERS;
       for (let i = 0; i < refNumbers.length; i++) {
         sref = refNumbers[i].getAttribute('ui-sref');
@@ -220,7 +208,7 @@ handoverCredentials.Submitter.forEach((submitter) => {
     });
   });
   describe('Handover - Accounting', () => {
-    const credentials = coreHelper.readFile('../utils/handover-data.json');
+    const credentials = coreHelper.readFile('../data/handoverData.json');
     const index = coreHelper.randomIndexInArray(credentials.Accounting);
 
     it('should navigate to Probation page successfully', () => {
@@ -242,7 +230,7 @@ handoverCredentials.Submitter.forEach((submitter) => {
     });
 
     it('should open the recent created ticket successfully', () => {
-      const refNumberNeedRead = coreHelper.readFile('../utils/test.json');
+      const refNumberNeedRead = coreHelper.readFile('../data/test.json');
       const refNumbers = handoverPage.REF_NUMBERS;
       for (let i = 0; i < refNumbers.length; i++) {
         sref = refNumbers[i].getAttribute('ui-sref');
@@ -277,7 +265,7 @@ handoverCredentials.Submitter.forEach((submitter) => {
       coreHelper.clickAndWait(dashboardPage.SIGN_OUT_BUTTON, loginPage.CREDENTIAL_TEXTBOX);
     });
   });
-  describe.skip('Handover - Direct Supervisor', () => {
+  describe('Handover - Direct Supervisor', () => {
     const index = coreHelper.randomIndexInArray(submitter.DirectSupervisor);
 
     it('should navigate to Probation page successfully', () => {
@@ -299,7 +287,7 @@ handoverCredentials.Submitter.forEach((submitter) => {
     });
 
     it('should open the recent created ticket successfully', () => {
-      const refNumberNeedRead = coreHelper.readFile('../utils/test.json');
+      const refNumberNeedRead = coreHelper.readFile('../data/test.json');
       const refNumbers = handoverPage.REF_NUMBERS;
       for (let i = 0; i < refNumbers.length; i++) {
         sref = refNumbers[i].getAttribute('ui-sref');
@@ -334,7 +322,7 @@ handoverCredentials.Submitter.forEach((submitter) => {
       coreHelper.clickAndWait(dashboardPage.SIGN_OUT_BUTTON, loginPage.CREDENTIAL_TEXTBOX);
     });
   });
-  describe.skip('Handover - Human Resource', () => {
+  describe('Handover - Human Resource', () => {
     const index = coreHelper.randomIndexInArray(submitter.HumanResource);
 
     it('should navigate to Probation page successfully', () => {
@@ -356,7 +344,7 @@ handoverCredentials.Submitter.forEach((submitter) => {
     });
 
     it('should open the recent created ticket successfully', () => {
-      const refNumberNeedRead = coreHelper.readFile('../utils/test.json');
+      const refNumberNeedRead = coreHelper.readFile('../data/test.json');
       const refNumbers = handoverPage.REF_NUMBERS;
       for (let i = 0; i < refNumbers.length; i++) {
         sref = refNumbers[i].getAttribute('ui-sref');
@@ -394,8 +382,8 @@ handoverCredentials.Submitter.forEach((submitter) => {
 });
 
 // Start the workflow
-describe.skip('Handover - 1st Approval', () => {
-  const credentials = coreHelper.readFile('../utils/handover-data.json');
+describe('Handover - 1st Approval', () => {
+  const credentials = coreHelper.readFile('../data/handoverData.json');
 
   it('should navigate to Probation page successfully', () => {
     loginPage.open();
@@ -416,7 +404,7 @@ describe.skip('Handover - 1st Approval', () => {
   });
 
   it('should open the recent created ticket successfully', () => {
-    const refNumberNeedRead = coreHelper.readFile('../utils/test.json');
+    const refNumberNeedRead = coreHelper.readFile('../data/test.json');
     const refNumbers = handoverPage.REF_NUMBERS;
     for (let i = 0; i < refNumbers.length; i++) {
       sref = refNumbers[i].getAttribute('ui-sref');
@@ -444,8 +432,8 @@ describe.skip('Handover - 1st Approval', () => {
     coreHelper.clickAndWait(dashboardPage.SIGN_OUT_BUTTON, loginPage.CREDENTIAL_TEXTBOX);
   });
 });
-describe.skip('Handover - HR Approval', () => {
-  const credentials = coreHelper.readFile('../utils/handover-data.json');
+describe('Handover - HR Approval', () => {
+  const credentials = coreHelper.readFile('../data/handoverData.json');
 
   it('should navigate to Probation page successfully', () => {
     loginPage.open();
@@ -466,7 +454,7 @@ describe.skip('Handover - HR Approval', () => {
   });
 
   it('should open the recent created ticket successfully', () => {
-    const refNumberNeedRead = coreHelper.readFile('../utils/test.json');
+    const refNumberNeedRead = coreHelper.readFile('../data/test.json');
     const refNumbers = handoverPage.REF_NUMBERS;
     for (let i = 0; i < refNumbers.length; i++) {
       sref = refNumbers[i].getAttribute('ui-sref');

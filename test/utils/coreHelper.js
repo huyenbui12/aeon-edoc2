@@ -68,13 +68,13 @@ exports.randomIndexInArray = function randomIndexInArray(array) {
 };
 
 exports.readLoginCredentials = function readLoginCredentials() {
-  const credentials = require('./login.json');
+  const credentials = require('../data/loginData.json');
   return credentials;
 };
 
 exports.writeFile = function writeFile(jsonData) {
   let fs = require('fs');
-  fs.writeFile('./test/utils/test.json', jsonData, (err) => {
+  fs.writeFile('./test/data/refNumber.json', jsonData, (err) => {
     if (err) {
       console.log(err);
     }
