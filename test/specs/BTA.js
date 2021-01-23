@@ -7,7 +7,7 @@
 /* eslint-disable import/no-useless-path-segments */
 const LoginPage = require('../pageobjects/login-page');
 const DashBoard = require('../pageobjects/dashboard-page');
-const BTAAddNewPage = require('../pageobjects/bta-page');
+const BTAAddNewPage = require('../pageobjects/bta');
 const coreHelper = require('../utils/coreHelper');
 const dashboardPage = require('../pageobjects/dashboard-page');
 
